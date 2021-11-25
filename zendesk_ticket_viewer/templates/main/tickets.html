@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<h2 id="map" style="text-align: center;">Zendesk Tickets</h2>
+
+<div class="container">
+
+<!-- {% for i in response %}
+<h3>Ticket: </h3>
+{{ i }}
+{% endfor %} -->
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Ticket Id</th>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tic in response %}
+        <tr>
+          <td><a href="ticket_detail/{{ tic.id }}"> {{ tic.id }}</a></td>
+          <td>{{ tic.subject }}</td>
+          <td>{{ tic.status }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+  
+  {% if response.has_other_pages %}
+    <ul class="pagination">
+      {% if response.has_previous %}
+        <li class="page-item"><a href="?page={{ response.previous_page_number }}">&laquo;</a></li>&nbsp;
+      {% else %}
+        <li class="page-item disabled"><span>&laquo;</span></li>&nbsp;
+      {% endif %}
+      {% for i in response.paginator.page_range %}
+        {% if response.number == i %}
+          <li class="page-item active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>&nbsp;
+        {% else %}
+          <li class="page-item"><a href="?page={{ i }}">{{ i }}</a></li>&nbsp;
+        {% endif %}
+      {% endfor %}
+      {% if response.has_next %}
+        <li class="page-item"><a href="?page={{ response.next_page_number }}">&raquo;</a></li>&nbsp;
+      {% else %}
+        <li class="page-item disabled"><span>&raquo;</span></li>&nbsp;
+      {% endif %}
+    </ul>
+  {% endif %}
+
+</div>
+
+
+{% endblock %}
+
+{% block extend_footer %}
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+{% endblock %}

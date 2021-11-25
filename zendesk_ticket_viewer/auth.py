@@ -1,0 +1,3 @@
+USERNAME = ''
+PASSWORD = ''
+SUB_DOMAIN = ''

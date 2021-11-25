@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+<h2 id="map" style="text-align: center;">Ticket Details</h2>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Ticket Property</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key,value in ticket_detail.items %}
+            <tr>
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+<!-- {{ ticket_detail }} -->
+
+
+
+</div>
+
+
+{% endblock %}
+
+{% block extend_footer %}
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+{% endblock %}
