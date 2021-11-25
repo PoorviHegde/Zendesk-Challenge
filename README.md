@@ -3,7 +3,7 @@
 
 TICKET VIEWER APPLICATION
 
-It is an application that connects with Zendesk organization account to fetch all the tickets for a user and display them. This application is built using python 
+It is an application that connects with Zendesk organization account to fetch all the tickets for an agent and display them. This application is built using python 
 Django framework. 
 
 To use the application:
