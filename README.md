@@ -39,8 +39,13 @@ Open a browser of your choice and copy-paste the following url-
 "http://127.0.0.1:8000/"
 
 
-You are all set! You should be able to view all the tickets created for your account in a table. To view the details of a particular ticket, just click on the id 
-number of that ticket.
+You are all set! You should be able to view all the tickets created for your account in a table. To view the details of a particular ticket, just click on the id number of that ticket.
+
+Bonus Step:
+To run tests on the application,
+Open a terminal and make sure you are still in the 'zendesk_ticket_viewer' directory. Run the following command-
+
+"python manage.py test"
 
 Hope you enjoyed using the application!
 
